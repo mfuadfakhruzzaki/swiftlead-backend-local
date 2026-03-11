@@ -8,7 +8,7 @@
 
 services:
   backend:
-    image: ${BACKEND_IMAGE:-ghcr.io/mfuadfakhruzzaki/swiftlead-backend:latest}
+    image: ${BACKEND_IMAGE:-swiftlead-backend:offline}
     container_name: swiftlead-backend
     restart: unless-stopped
     ports:
@@ -27,6 +27,7 @@ services:
 
   db:
     image: timescale/timescaledb:latest-pg16
+    platform: linux/amd64
     container_name: swiftlead-db
     restart: unless-stopped
     environment:
