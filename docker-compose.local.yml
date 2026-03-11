@@ -8,9 +8,8 @@
 
 services:
   backend:
-    image: ${BACKEND_IMAGE:-swiftlead-backend:offline}
+    image: ${BACKEND_IMAGE:-ghcr.io/mfuadfakhruzzaki/swiftlead-backend:latest}
     container_name: swiftlead-backend
-    pull_policy: never
     restart: unless-stopped
     ports:
       - "${PORT:-8080}:8080"
